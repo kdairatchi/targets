@@ -1,0 +1,17 @@
+#!/usr/local/bin/ruby
+# frozen_string_literal: true
+
+$LOAD_PATH.unshift(File.expand_path(File.join('..', '..', 'lib'), __FILE__))
+
+require 'bundler/setup'
+require 'sentry-raven'
+require 'bounty-targets/cli'
+
+Raven.configure do |config|
+  config.dsn = ENV['SENTRY_DSN'] if ENV.key?('SENTRY_DSN')
+  config.excluded_exceptions = %w[Interrupt] # Don't alert for ctrl-c
+end
+
+Raven.capture do
+  BountyTargets::CLI.new.run!
+end

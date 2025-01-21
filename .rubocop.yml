@@ -1,0 +1,76 @@
+AllCops:
+  TargetRubyVersion: 3.1
+  NewCops: enable
+
+require:
+  - rubocop-rspec
+
+inherit_from:
+  - .rubocop_todo.yml
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Enabled: false
+
+Layout/ArgumentAlignment:
+  EnforcedStyle: with_fixed_indentation
+  IndentationWidth: 2
+
+Layout/CaseIndentation:
+  EnforcedStyle: end
+
+Layout/EndAlignment:
+  EnforcedStyleAlignWith: variable
+
+Layout/LineLength:
+  Max: 120
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Layout/MultilineOperationIndentation:
+  EnforcedStyle: indented
+
+Layout/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: no_space
+
+Lint/UriEscapeUnescape:
+  Enabled: false
+
+RSpec/BeforeAfterAll:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/FilePath:
+  SpecSuffixOnly: true
+
+Style/Documentation:
+  Enabled: false
+
+Style/HashSyntax:
+  EnforcedShorthandSyntax: never
+
+Style/MultilineBlockChain:
+  Enabled: false
+
+Style/FormatStringToken:
+  Enabled: false
+
+Style/StringConcatenation:
+  Enabled: false
